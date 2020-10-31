@@ -1,0 +1,50 @@
+---
+title: "Practical 1"
+output: learnr::tutorial
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+library(mosaic)
+knitr::opts_chunk$set(echo = FALSE)
+diet_dat <- read.csv("www/Chick_Diet.csv")
+growth_dat <- read.csv("www/Chick_growth.csv")
+
+```
+
+
+# Practical 1 {.unlisted .unnumbered}
+Interactive web-based environment
+If for some reason you have not been able to install R/RStudio or the mosaic package on your PC, or are unable to use the Windows Virtual Desktop, you can do Practical 1 in this website.
+
+Enter your R commands in the box below and click "Run code" when ready. **Note** This website does **not** save your R commands in a script, as is possible with RStudio. Therefore you should also open either Notepad (Windows) or TextEdit (Macs) and copy and paste your commands into the website.
+
+The first few lines are written out for you to get started. **Note** the commands:
+
+`library(mosaic) # can also use library(bio2020)`
+
+`diet_dat <- read.csv("Data/Chick_Diet.csv")`
+
+`growth_dat <- read.csv("Data/Chick_growth.csv")`
+
+
+have already been run for you, so the data needed for Practical 1 and the relevant mosaic library is ready.
+
+
+```{r practical_1, exercise=TRUE, exercise.lines=30}
+# Introduction to R. Basic data handling
+
+# Display the first few lines of the data
+head(diet_dat)
+# Inspect the structure of the data
+str(diet_dat)
+# Try the nrow(), ncol() and summary() functions
+
+# Some simple summary statistics
+mean(weight~Diet, data = diet_dat) 
+sd(weight~Diet, data = diet_dat) 
+
+
+```
+
